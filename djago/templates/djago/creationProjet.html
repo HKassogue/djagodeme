@@ -1,0 +1,10 @@
+<h1> Création de Projet !</h1>
+<p> Remplissez le formulaire pour créer votre projet.</p>
+<form action="{% url 'nouveauProjet' %}" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <p>
+        <input type="submit" value="Créer le pari" />
+        <a href="{% url 'listeProjet' budget=0 statut='SDI' %}"> Retour à la liste des projets </a>
+    </p>
+</form>
