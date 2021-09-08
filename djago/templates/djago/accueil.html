@@ -1,2 +1,10 @@
-{% extends "base.html" %}
+{% extends "base.html"%}
+
+{% block connexion_top %}
+    {% if user %}
+        <li><a href="{% url 'deconnexion' %}">Log out</a></li>
+    {% else %}
+        <li><a href="{% url 'connexion' %}">Log in</a></li>
+    {% endif %}
+{% endblock %}
 

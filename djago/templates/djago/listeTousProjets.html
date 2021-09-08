@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+    Liste des projets
+{% endblock %}
+{% block body %}
+    <div class="wrapper">
+        <div class="box1">
+            {% for projet in projets %}
+                <div class="line1">
+					<div class="line2 wrapper">
+						<section class="col1">
+							<h2><strong>{{projet.nom|first}}</strong><span>{{projet.nom}}</span></h2>
+							{% if projet.couverture %}
+								<div class="pad_bot1"><figure><img src="{{projet.couverture.url}}" alt=""></figure></div>
+							{% else %}
+								<div class="pad_bot1"><figure><img src="{% static 'images/logo_r.jpg' %}" alt=""></figure></div>
+							{% endif %}
+							{{projet.resume}}
+							<a href="#" class="button1">Plus d'iinfo</a>
+						</section>
+					</div>
+					{% if forloop.counter|divisibleby:3 %}</div>{% endif %}
+				</div>
+			{% empty %}
+    			Aucun projet pour le moment
+			{% endfor %}
+		</div>
+	</div>
+{% endblock %}
+

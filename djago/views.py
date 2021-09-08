@@ -76,6 +76,11 @@ def lister_projets(request, budget, statut='C'):
         projets = Projet.objects.filter(budget__gte=budget, statut=statut)
         return render(request, 'djago/lister_projets.html', locals())
 
+def liste_tous_projets(request):
+    from .models import Projet
+    projets = Projet.objects.all()
+    return render(request, 'djago/listeTousProjets.html', locals())
+
 @login_required(login_url="accueil")
 def creerProjet(request):
     form = CreerProjetForm(request.POST or None)
