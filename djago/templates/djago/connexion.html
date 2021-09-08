@@ -4,6 +4,15 @@
     Connexion
 {% endblock %}
 
+{% block connexion_top %}
+    {% if user.is_authenticated %}
+        <li><a href="{% url 'deconnexion' %}">Log out</a></li>
+    {% else %}
+        <li><a href="{% url 'connexion' %}">Log in</a></li>
+    {% endif %}
+{% endblock %}
+
+
 {% block body %}
     {% if erreur %}
         <h1>Bienvenue sur Djago dèmè</h1>

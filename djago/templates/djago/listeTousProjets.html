@@ -22,7 +22,7 @@
 						<div class="pad_bot1"><figure><img src="{% static 'images/logo_r.jpg' %}" alt="" width="265px" height="120px"></figure></div>
 					{% endif %}
 					{{projet.resume}}
-					<a href="#" class="button1">Plus d'iinfo</a>
+					<a href="{% url 'searchProjet' projet.id %}" class="button1">Plus d'iinfo</a>
 					</section>
 					{% if forloop.counter|divisibleby:3 %}
 						</div> </div>

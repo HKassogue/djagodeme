@@ -15,6 +15,7 @@ def accueil(request):
     #     return HttpResponse(f"<h1>Bonjour {user}. Bienvenu sur Djago dèmè.")
     # else:
     #     return HttpResponse("<h1>Bonjour, bienvenu sur Djago dèmè</h1>")
+    user = request.user
     return render(request, "djago/accueil.html", locals())
 
 
