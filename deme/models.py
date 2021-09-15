@@ -20,7 +20,7 @@ class Versement(models.Model):
 
 class Financement(models.Model):
     date_debut = models.DateField(null=False, blank=False, verbose_name="Date de début")
-    duree = models.IntegerField(null=False, blank=False, max_length=6, verbose_name='Durée')
+    duree = models.IntegerField(null=False, blank=False, verbose_name='Durée')
     montant = models.FloatField(null=False, blank=False, max_length=10)
     utilisateur = models.ForeignKey('djago.Utilisateur', null=True, blank=False, on_delete=models.PROTECT)
     projet = models.ForeignKey('djago.Projet', null=True, blank=False, on_delete=models.PROTECT)
